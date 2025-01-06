@@ -1,3 +1,5 @@
+import time
+
 # Constants
 MAPWIDTH = 4
 MAPHEIGHT = 5
@@ -70,8 +72,14 @@ def getShortestPath(courseMap, startPos, endPos):
 def solveCourse(course, obstacles, checkpoints):
     for x in range(len(checkpoints) - 1):
         shortestPath = getShortestPath(course, checkpoints[x], checkpoints[x + 1])
+        if x != len(checkpoints) - 2:
+            del shortestPath[-1]
         print(shortestPath)
 
 
 populateCourse(courseMap, MAPWIDTH, MAPHEIGHT)
+startTime = time.time()
 solveCourse(courseMap, wallList, checkpointList)
+endTime = time.time()
+executionTime = endTime - startTime
+print("Execution Time: %.4f seconds" % executionTime)

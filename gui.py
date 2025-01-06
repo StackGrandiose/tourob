@@ -14,9 +14,9 @@ GRID_WIDTH = 4
 
 
 displaySurface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), 0, 32)
-pygame.display.set_caption('Charlie Chunker GUI Ver. 0.1')
+pygame.display.set_caption('tourob GUI')
 
-displaySurface.fill(GRAY)
+displaySurface.fill(WHITE)
 
 while True:
     for event in pygame.event.get():
