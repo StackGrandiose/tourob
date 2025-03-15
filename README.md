@@ -8,7 +8,7 @@ This is a program designed for use on a robot for the "Robot Tour" Event for the
 
 Positions on the course are determined by their X value and Y value. Y values are in reverse (going down on the coordinate plane means the Y value increases). Map dimensions must be rectangular and are defined in `MAPWIDTH` and `MAPHEIGHT`
 
-Start and end points can be determined by changing the values in `STARTPOINT` and `ENDPOINT` in `main.py`. The order of points that the robot travels to is determined by `checkpointList[]`.
+Start and end points can be determined by changing the values in `STARTPOINT` and `ENDPOINT` in `pathfind.py`. The order of points that the robot travels to is determined by `checkpointList[]`.
 
 ```python
 checkpointList = [
@@ -39,3 +39,7 @@ wallList = [
 ```
 
 The program is instructed to solve the course using the `solveCourse` function.
+
+The actual pathfinding and motor commands are split up between the `pathfind.py` and `code.py` files. `pathfind.py` simply finds an optimal route and `code.py` is the file that must be put on the robot. in `code.py`, you must copy the output produced by `pathfind.py` into the source code file. Eventually, this may be automated where instructions are output to a text file where `code.py` can read it.
+
+
